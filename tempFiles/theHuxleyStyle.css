@@ -1,0 +1,18 @@
+﻿body{
+	
+	width:720px;
+	background-color: #F7F7F7;
+	padding: auto;
+}	
+
+.table {display:inline-block;}
+#descricao { float: left; }
+#linguagem { float: right; }
+
+tr:nth-child(even).table {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #E3E3E3;
+}

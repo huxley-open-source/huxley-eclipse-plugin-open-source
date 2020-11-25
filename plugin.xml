@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="The Huxley"
+            id="TheHuxley">
+      </category>
+      <view
+            category="TheHuxley"
+            class="com.huxley.thehuxley.views.Views"
+            icon="icons/huxley.png"
+            id="thehuxley.views.Views"
+            name="">
+      </view>
+      <view
+            class="com.huxley.tests.Description"
+            id="com.huxley.tests.Description"
+            name="ProblemDescription">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="thehuxley.views.Views"
+               relationship="right"
+               id="thehuxley.views.Views">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="TheHuxley.objectContribution1"
+            nameFilter="*.java"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="com.huxley.thehuxley.Action1"
+               enablesFor="1"
+               id="TheHuxley.action1"
+               label="Submit to The Huxley"
+               menubarPath="additions"
+               style="push">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.huxley.tests.Description2"
+            id="com.huxley.tests.Description2"
+            name="New EditorPart">
+      </editor>
+   </extension>
+</plugin>
